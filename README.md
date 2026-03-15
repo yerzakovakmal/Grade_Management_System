@@ -25,15 +25,17 @@
 team_project_oop/
 │
 ├── include/
-│   ├── User.h
-│   ├── Student.h
-│   ├── Professor.h
+│   ├── user.h
+│   ├── student.h
+│   ├── professor.h
 │
 ├── src/
-│   ├── User.cpp
-│   ├── Student.cpp
-│   ├── Professor.cpp
-│   ├── Course.cpp
+│   ├── user.cpp
+│   ├── student.cpp
+│   ├── professor.cpp
+│   ├── course.cpp
+│   ├── grade.cpp
+│   ├── main.cpp
 │
 ├── data/
 │   ├── students.txt
