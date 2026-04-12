@@ -29,6 +29,7 @@ project/
 │   ├── Student.hpp / Student.cpp
 │   ├── Professor.hpp / Professor.cpp
 │   ├── TeachingAssistant.hpp / TeachingAssistant.cpp
+│   ├── Admin.hpp / Admin.cpp
 │   ├── Course.hpp / Course.cpp
 │   ├── Assignment.hpp / Assignment.cpp
 │   ├── Grade.hpp / Grade.cpp
@@ -42,10 +43,10 @@ project/
 │   ├── wireframes.fig
 │   └── hifi_screens.fig
 ├── demo/
-│   ├── exceptions_demo.cpp   
-│   └── operators_demo.cpp   
+│   ├── exceptions_demo.cpp    
+│   └── operators_demo.cpp     
 ├── data/
-│   └── (saved .txt files from file I/O)
+│   └── (saved .txt files from Course/Grade file I/O)
 └── README.md
 ```
 ---
@@ -391,61 +392,3 @@ Write a self-contained file that:
 > If the professor asks: explain that `operator==` returns `bool` and compares a specific field (userId), and that `operator<<` returns `ostream&` so that chaining like `cout << s1 << s2` works.
 
 ---
-
-## File Structure
-
-```
-project/
-├── src/
-│   ├── User.hpp / User.cpp
-│   ├── Student.hpp / Student.cpp
-│   ├── Professor.hpp / Professor.cpp
-│   ├── TeachingAssistant.hpp / TeachingAssistant.cpp
-│   ├── Admin.hpp / Admin.cpp
-│   ├── Course.hpp / Course.cpp
-│   ├── Assignment.hpp / Assignment.cpp
-│   ├── Grade.hpp / Grade.cpp
-│   ├── Exceptions.hpp
-│   └── main.cpp
-├── qt/
-│   ├── MainWindow.hpp / .cpp / .ui
-│   ├── LoginDialog.hpp / .cpp / .ui
-│   └── ...
-├── design/
-│   ├── wireframes.fig
-│   └── hifi_screens.fig
-├── demo/
-│   ├── exceptions_demo.cpp     ← Malika
-│   └── operators_demo.cpp      ← Rushana
-├── data/
-│   └── (saved .txt files from Course/Grade file I/O)
-└── README.md
-```
-
----
-
-## Suggested Order of Work
-
-```
-Week 1 — Core hierarchy:
-  C-01 User  →  C-02 Student  →  C-03 Professor  →  C-05 Admin
-  C-06 Course  →  C-07 Assignment  →  C-08 Grade  →  C-09 Exceptions
-  D-01 Wireframes (Malika, runs in parallel)
-
-Week 2 — Integration & UI:
-  C-04 TeachingAssistant  →  C-10 main.cpp demo
-  Q-01 Qt setup  →  Q-02 Login  →  Q-03/Q-04/Q-05 screens
-  D-02 Hi-fi screens  →  D-03 Slides
-  D-04 exceptions_demo (Malika)  →  D-05 operators_demo (Rushana)
-```
-
----
-
-## Notes for Individual Professor Review
-
-- **Akmal:** Be ready to walk through the virtual inheritance constructor chain in `TeachingAssistant` line by line
-- **Akbarali:** Be ready to explain why `Course::loadFromFile` is `static` and what `FileIOException` adds over a plain `ifstream` check
-- **Xondamir:** Be ready to explain how Qt signals and slots connect a button click to a C++ method call
-- **Nodir:** Be ready to explain why `QMessageBox` is used instead of `cout` for error display in Qt
-- **Malika:** Be ready to explain `throw`, `catch`, and `.what()` from your `exceptions_demo.cpp`
-- **Rushana:** Be ready to explain what `operator<<` returns (`ostream&`) and why, from your `operators_demo.cpp`
