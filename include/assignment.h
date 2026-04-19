@@ -12,6 +12,8 @@ class Assignment{
         string dueDate;
         double maxScore;
         Course* course;
+
+        static int nextID;
     public:
         Assignment(string title, string dueDate, double maxScore, Course* course);
 
